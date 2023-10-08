@@ -10,7 +10,9 @@ module.exports = class UserService {
   }
 
   async findUser(userId) {
-    const user = await modelUser.findOne({ _id: userId }).exec();
+    const user = await modelUser
+      .findOne({ _id: userId }, { password: 0 })
+      .exec();
 
     if (!user) {
       throw new Error("Usuário não encontrado");
