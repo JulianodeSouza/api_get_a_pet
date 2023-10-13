@@ -14,7 +14,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.get("/:userId", async (req, res) => {
+router.get("/:userId", verifyToken, async (req, res) => {
   try {
     const userId = req.params.userId;
     const userService = new UserService();

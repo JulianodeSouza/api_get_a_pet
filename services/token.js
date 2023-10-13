@@ -6,7 +6,7 @@ function createToken(user) {
     { id: user._id, name: user.firstname + " " + user.lastname },
     process.env.SECRET,
     {
-      expiresIn: "5m",
+      expiresIn: "1h",
     }
   );
 
@@ -14,7 +14,7 @@ function createToken(user) {
 }
 
 function verifyToken(req, res, next) {
-  const token = req.headers["authorization"];
+  let token = req.headers["authorization"].split(" ")[1];
 
   if (!token) res.json({ error: "Usuário não autorizado!" });
 
