@@ -1,11 +1,1 @@
-module.exports = class PetController {
-
-
-
-async 
-
-
-
-
-
-};
+module.exports = class PetController {};
