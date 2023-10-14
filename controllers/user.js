@@ -2,7 +2,7 @@ const modelUser = require("../models/user");
 const bcrypt = require("bcrypt");
 const { createToken } = require("../services/token");
 
-module.exports = class UserService {
+module.exports = class UserController {
   async findUsers() {
     const allUsers = await modelUser.find().exec();
 
