@@ -3,6 +3,7 @@ const userService = require("../src/controllers/user");
 const mockUser = Promise.resolve({
   firstname: "Carlos",
   lastname: "Silva",
+  email: "teste@gmail.com",
   cpf: "00000000000",
 });
 
