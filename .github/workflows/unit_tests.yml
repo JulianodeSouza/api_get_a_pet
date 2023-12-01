@@ -1,0 +1,18 @@
+name: Execução testes desenvolvimento
+on:
+  pull_request:
+    branches: ["desenvolvimento"]
+  workflow_dispatch:
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@master
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+      - name: Install dependencies
+        run: npm i --rebase-peer-deps --legacy-peer-deps
+      - name: Run tests
+        run: npm run test
